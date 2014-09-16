@@ -1,0 +1,10 @@
+compiler.compileProtoFiles=true
+compiler.javaCodeGenerationEnabled=true
+compiler.protocFilePath=C\:\\Users\\Bence\\Development\\tools\\protobuf\\protobuf-java-2.5.0.jar
+compiler.useProtocInCustomPath=true
+compiler.useProtocInSystemPath=false
+eclipse.preferences.version=1
+general.enableProjectSettings=true
+paths.directoryPaths=${workspace_loc\:/${project}/proto}
+paths.filesInMultipleDirectories=true
+paths.filesInOneDirectoryOnly=false

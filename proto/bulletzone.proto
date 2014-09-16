@@ -1,0 +1,42 @@
+syntax = "proto2";
+
+package net.cserna.bence.bulletzone.protobuf;
+
+message Registration {
+	optional string name = 1;
+}
+
+message RegistrationAck {
+	required bool wasSuccessful = 1;
+	optional int32 userId = 2;
+}
+
+message Action {
+	required int32 userId = 1;
+	optional int32 data = 2;
+	required int64 messageId = 3;
+}
+
+message Update {
+	repeated int32 field = 1 [packed = true];
+	required int64 timestamp = 2;
+}
+
+message PDU {
+	enum Type {
+		TURN = 1;
+		MOVE = 2;
+		FIRE = 3;
+		JOIN = 5;
+		EXIT = 6;
+		UPDATE = 7;
+	}
+
+	// Identifies which field is filled in.
+	required Type type = 1;
+	optional Registration registration = 2;
+	optional RegistrationAck registrationAck = 3;
+	optional Action action = 4;
+	optional Update update = 5;
+
+}
